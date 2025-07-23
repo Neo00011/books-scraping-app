@@ -1,29 +1,30 @@
-# Kitap Verileri Web Scraping Uygulaması
+# Book Data Web Scraping Application
 
-Bu Python uygulaması, belirlenen bir çevrimiçi kitap mağazasından kitap adları, stok durumları, fiyatlar ve ürün linkleri gibi önemli bilgileri çeker. Çekilen veriler, analiz için kolayca kullanılabilecek bir `.csv` (Comma Separated Values) dosyasına kaydedilir.
+This Python application automatically extracts essential information such as book titles, stock availability, prices, and product links from a specified online bookstore. The collected data is saved into a `.csv` (Comma Separated Values) file, making it easy for analysis.
 
-## Ne Yapar?
+## What It Does
 
-* **Kitap Bilgileri Çekimi:** Hedef sitedeki kitapların başlıklarını, stok durumlarını, fiyatlarını ve doğrudan ürün linklerini toplar.
-* **Veri Kaydı (CSV):** Çekilen tüm verileri düzenli bir `.csv` dosyasına kaydeder.
-* **Hızlı ve Etkin:** Statik HTML içeriğinden veri çekmek için optimize edilmiştir.
+* **Book Information Extraction:** Gathers book titles, their current stock status, prices, and direct product links from the target website.
+* **Data Recording (CSV):** Saves all extracted data into a structured `.csv` file. This format can be easily opened and processed using spreadsheet programs like Excel.
+* **Fast & Efficient:** Optimized for efficient data extraction from static HTML content.
 
-## Neden Önemli?
+## Why Is This Important?
 
-E-ticaret sektöründe veya kitap endüstrisinde faaliyet gösterenler için güncel ürün ve stok bilgisi kritik öneme sahiptir. Bu uygulama:
+For businesses operating in the e-commerce or book industry, up-to-date product and stock information is critically important. This application:
 
-* **Piyasa Takibi:** Rakip sitelerdeki fiyat ve stok değişikliklerini hızlıca takip etme imkanı sunar.
-* **Veriye Dayalı Kararlar:** Toplanan güncel ve doğru verilerle daha bilinçli iş kararları almanızı sağlar.
+* **Market Monitoring:** Enables quick tracking of price and stock changes on competitor websites.
+* **Data-Driven Decisions:** Provides current and accurate data for making more informed business decisions.
 
-## Kullanılan Teknolojiler
+## Technologies Used
 
-* **Python:** Uygulamanın geliştirildiği ana programlama dili.
-* **`requests` Kütüphanesi:** Web sitelerinden HTML içeriği almak için kullanılır.
-* **`BeautifulSoup` Kütüphanesi:** Çekilen HTML içeriğini kolayca ayrıştırmak ve veri ayıklamak için kullanılır.
+* **Python:** The primary programming language used for the application.
+* **`requests` Library:** Utilized for sending HTTP requests and retrieving HTML content from websites.
+* **`BeautifulSoup` Library:** Used for easily parsing the retrieved HTML content and extracting specific data.
+* **`csv` Module (Python Built-in):** For writing the collected data directly into a standard CSV file format. *(Note: If you used pandas for CSV writing, replace this with `pandas` and adjust "How It Works" step 4 accordingly)*
 
-## Nasıl Çalışır?
+## How It Works
 
-1.  Uygulama, belirlenen kitap satış sitesine HTTP isteği gönderir ve sayfanın HTML içeriğini alır.
-2.  `BeautifulSoup` kullanarak bu HTML içeriğini analiz eder.
-3.  Her bir kitap için başlık, stok durumu, fiyat ve ürün linki gibi bilgileri tespit eder ve çeker.
-4.  Bu DataFrame'i `kitap_verileri.csv` adında bir CSV dosyasına kaydeder.
+1.  The application sends an HTTP request to the specified online bookstore and retrieves the HTML content of the page.
+2.  It then uses `BeautifulSoup` to parse and analyze this HTML content.
+3.  For each book, it identifies and extracts information such as the title, stock status, price, and product link.
+4.  Finally, it writes all the collected data into a CSV file named `book_data.csv`.
